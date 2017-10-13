@@ -6,3 +6,6 @@
 /output_*/
 /source/components/
 s3.conf
+/vendor/
+/source/_dev/node_modules/
+

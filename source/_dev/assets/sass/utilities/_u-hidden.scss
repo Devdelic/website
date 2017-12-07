@@ -1,0 +1,15 @@
+$__u-hidden-breakpoints: $breakpoints;
+
+.u-hidden:not(.is-active) {
+  display: none;
+}
+
+@if ($GENERATE_RESPONSIVE_CLASSES) {
+  @each $__bp, $__mq in $__u-hidden-breakpoints {
+    @media #{$__mq} {
+      .u-hidden\@#{$__bp}:not(.is-active) {
+        display: none;
+      }
+    }
+  }
+}

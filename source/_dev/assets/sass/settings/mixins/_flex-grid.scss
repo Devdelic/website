@@ -1,0 +1,5 @@
+// Flex grid mixin.
+
+@mixin flex-grid($span, $cols: 12) {
+  width: calc(100% / #{$cols} * #{$span});
+}

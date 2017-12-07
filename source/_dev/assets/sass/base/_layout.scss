@@ -1,0 +1,26 @@
+// Layout.
+
+* {
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img:not(.u-keep-original-img-size) {
+  height: auto;
+  max-width: 100%;
+}

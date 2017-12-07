@@ -1,0 +1,71 @@
+/**
+ * @define utilities
+ * Sizing utilities
+ */
+
+/* Proportional widths
+   ========================================================================== */
+
+[class*="u-flex-grid-size-"]:not([class*="u-flex-grid-size-full-alt"]):not([class*="u-flex-grid-size-fill"]) {
+  flex-basis: auto;
+}
+
+$flex-grid-columns-map: (16, 12, 6, 4, 3, 2);
+
+@mixin generate-flex-grid-cell-size($suffix: '') {
+  @each $flex-grid-columns in $flex-grid-columns-map {
+    @for $i from 1 through $flex-grid-columns {
+      $result: ($flex-grid-columns / $i);
+      $width: '';
+
+      @if ($result == 1) {
+        $width: 100%;
+      }
+      @else if ($result == 2) {
+        $width: 50%;
+      }
+      @else if ($result == 3) {
+        $width: 33.33333%;
+      }
+      @else if ($result == 4) {
+        $width: 25%;
+      }
+      @else {
+        $width: calc(100% / #{$flex-grid-columns} * #{$i} )
+      }
+
+      .u-flex-grid-#{$i}of#{$flex-grid-columns}#{$suffix} {
+        width: #{$width};
+      }
+    }
+  }
+
+  /**
+   * Make an element fill the remaining space.
+   *
+   * 1. Be explicit to work around IE10 bug with shorthand flex
+   *    http://git.io/vllC7
+   * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes
+   *    http://git.io/vllMt
+   */
+  .u-flex-grid-fill#{$suffix} {
+    flex: 1 1 0% !important; /* 1 */
+  }
+
+  .u-flex-grid-fill-alt#{$suffix} {
+    flex: 1 1 auto !important; /* 1 */
+    flex-basis: 0% !important; /* 2 */
+  }
+
+  .u-flex-grid-full#{$suffix} {
+    width: 100% !important;
+  }
+}
+
+$__u-flex-breakpoints: $breakpoints;
+@include generate-flex-grid-cell-size();
+@each $__bp, $__mq in $__u-flex-breakpoints {
+  @media #{$__mq} {
+    @include generate-flex-grid-cell-size(\@#{$__bp});
+  }
+}

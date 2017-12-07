@@ -1,0 +1,62 @@
+// Work item.
+$__c-work-item__gap-size: 50px;
+
+.c-work-item {
+  position: relative;
+  text-align: center;
+
+  @media #{$breakpoint-s} {
+    &:not(:last-child) {
+      margin-bottom: $__c-work-item__gap-size;
+    }
+  }
+
+  @media #{$breakpoint-m} {
+    // Using a formula (an + b). Description: a represents a cycle size,
+    // n is a counter (starts at 0), and b is an offset value.
+    &:nth-child(3n+2) {
+      margin: {
+        left: $__c-work-item__gap-size;
+        right: $__c-work-item__gap-size;
+      }
+    }
+    width: calc((100% - #{$__c-work-item__gap-size * 2}) / 12 * 4);
+  }
+
+  @media #{$breakpoint-l} {
+    // Using a formula (an + b). Description: a represents a cycle size,
+    // n is a counter (starts at 0), and b is an offset value.
+    &:nth-child(3n+2) {
+      margin: {
+        left: $__c-work-item__gap-size;
+        right: $__c-work-item__gap-size;
+      }
+    }
+    width: calc((100% - #{$__c-work-item__gap-size * 2}) / 12 * 4);
+  }
+}
+
+.c-work-item__image {
+  margin-bottom: 25px;
+}
+
+.c-work-item__name {
+  border-bottom: {
+    color: #f00;
+    style: solid;
+    width: 3px;
+  }
+  text-transform: uppercase;
+}
+
+.c-work-item__link {
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-indent: 110%;
+  top: 0;
+  z-index: 1;
+}

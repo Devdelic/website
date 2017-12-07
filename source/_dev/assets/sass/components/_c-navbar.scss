@@ -5,11 +5,74 @@
 // Navbar.
 .c-navbar {}
 
-.c-navbar__inner {}
+.c-navbar__inner {
+  display: flex;
 
-// Navbar - Navigation.
-.c-navbar__navigation {}
+  @media #{$breakpoint-s} {
+    flex-direction: column;
+  }
+
+  @media #{$breakpoint-m} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media #{$breakpoint-l} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+// Header.
+.c-navbar__header {
+  @media #{$breakpoint-s} {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.c-navbar__button {
+  @media #{$breakpoint-m} {
+    display: none;
+  }
+
+  @media #{$breakpoint-l} {
+    display: none;
+  }
+}
+
+// Navigation.
+.c-navbar__navigation {
+  @media #{$breakpoint-s} {
+    &:not(.is-active) {
+      display: none;
+    }
+  }
+
+  @media #{$breakpoint-m} {
+    @include flex-grid(8);
+  }
+
+  @media #{$breakpoint-l} {
+    @include flex-grid(6);
+  }
+}
 
 .c-navbar__navigation-list {
   display: flex;
+
+  @media #{$breakpoint-s} {
+    flex-direction: column;
+  }
+
+  @media #{$breakpoint-m} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @media #{$breakpoint-l} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

@@ -42,15 +42,15 @@
 </head>
 <body>
 <header>
-  <nav class="c-navbar">
+  <nav class="c-navbar js-navbar">
     <div class="c-navbar__inner c-container c-container--max-width">
       <div class="c-navbar__header">
         <a class="c-navbar__brand" href="{{ site.url }}/">{{ site.title }}</a>
-        <button class="c-navbar__button" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <button class="c-navbar__button js-navbar__button" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
         </button>
       </div><!-- /.c-navbar__header -->
-      <div class="c-navbar__navigation">
+      <div class="c-navbar__navigation js-navbar__navigation">
         <ul class="c-navbar__navigation-list">
           <li class="c-navbar__navigation-list-item"><a href="{{ site.url }}/#!" class="c-navbar__navigation-link">Home</a></li>
           <li class="c-navbar__navigation-list-item"><a href="{{ site.url }}/#!" class="c-navbar__navigation-link">Services</a></li>
@@ -62,15 +62,18 @@
     </div><!-- /.c-container -->
   </nav><!-- /.c-navbar -->
 </header>
-<main class="c-container">
+<main>
   {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
 </main><!-- /.c-container -->
-<footer class="container">
+<footer>
   Copyright &copy; {{ "now"|date("Y") }} {{ site.title }}
 </footer>
 
 {% block scripts %}
 {% endblock %}
+
+<script src="{{ site.url }}/assets/scripts/webfontloader/webfontloader.js"></script>
+<script src="{{ site.url }}/assets/scripts/all.js"></script>
 
 {% if site.google_analytics_tracking_id %}
 <script type="text/javascript">

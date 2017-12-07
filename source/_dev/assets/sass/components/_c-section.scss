@@ -1,0 +1,26 @@
+// Section component.
+
+$__section-padding-y: 100px;
+$__section-header-margin: $__section-padding-y;
+
+.c-section {
+  padding: {
+    bottom: $__section-padding-y;
+    top: $__section-padding-y;
+  };
+}
+
+.c-section__header {
+  margin-bottom: $__section-header-margin;
+}
+
+.c-section__title {
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+}
+
+.c-section__body {}
+
+.c-section__footer {}

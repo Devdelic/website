@@ -8,4 +8,4 @@
 s3.conf
 /vendor/
 /source/_dev/node_modules/
-
+/node_modules/

@@ -22,7 +22,7 @@
   $__property_values: map_get($array, 'property_values');
   $__breakpoints:     $breakpoints;
 
-  @each $__property_value in $__property-values {
+  @each $__property_value in $__property_values {
     $__selector: #{$__selector_prefix}-#{$__property_value};
     #{$__selector} {
       #{$__property-name}: #{$__property-value};

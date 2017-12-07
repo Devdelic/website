@@ -8,6 +8,7 @@ module.exports = {
   dev: {
     scss: [settings.path.dev.sass + '/**/*.scss'],
     css: [settings.path.dev.css + '/**/*.css'],
+    // js: [settings.path.dev.js + '/**/*.js', "!" + settings.path.dev.js + '/**/_*.js'],
     js: [settings.path.dev.js + '/**/*.js'],
     svg: [settings.path.dev.svg + '/**/*.svg']
   },
